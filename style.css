@@ -1,0 +1,545 @@
+```css
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Noto Sans Thai",sans-serif;
+}
+
+:root{
+
+    --navy:#1e3a8a;
+    --primary:#4f46e5;
+    --bg:#f2f5fb;
+    --white:#fff;
+    --line:#e5e7eb;
+    --text:#1f2937;
+    --muted:#6b7280;
+
+    --green:#10b981;
+    --yellow:#f59e0b;
+    --red:#ef4444;
+}
+
+body{
+
+    background:var(--bg);
+    color:var(--text);
+}
+
+.layout{
+
+    display:flex;
+    min-height:100vh;
+}
+
+/* =======================
+SIDEBAR
+======================= */
+
+.sidebar{
+
+    width:280px;
+    background:var(--navy);
+
+    color:white;
+
+    display:flex;
+    flex-direction:column;
+
+    padding:25px;
+}
+
+.brand{
+
+    display:flex;
+    align-items:center;
+    gap:15px;
+
+    margin-bottom:35px;
+}
+
+.logo{
+
+    width:50px;
+    height:50px;
+
+    border-radius:12px;
+
+    background:var(--primary);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:22px;
+    font-weight:bold;
+}
+
+.brand h2{
+
+    font-size:22px;
+}
+
+.brand small{
+
+    color:#b8c6ff;
+}
+
+.menu{
+
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+}
+
+.menu a{
+
+    color:white;
+
+    text-decoration:none;
+
+    padding:14px 18px;
+
+    border-radius:10px;
+
+    transition:.25s;
+}
+
+.menu a:hover{
+
+    background:rgba(255,255,255,.12);
+}
+
+.menu .active{
+
+    background:var(--primary);
+}
+
+.student-card{
+
+    margin-top:auto;
+
+    background:rgba(255,255,255,.1);
+
+    border-radius:15px;
+
+    padding:18px;
+}
+
+.student-card h3{
+
+    margin:10px 0;
+}
+
+.status{
+
+    display:inline-block;
+
+    background:var(--primary);
+
+    padding:5px 10px;
+
+    border-radius:6px;
+
+    font-size:12px;
+}
+
+/* =======================
+MAIN
+======================= */
+
+.main{
+
+    flex:1;
+}
+
+.topbar{
+
+    background:white;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:20px;
+
+    padding:20px 35px;
+
+    border-bottom:1px solid var(--line);
+}
+
+.topbar h1{
+
+    flex:1;
+
+    font-size:24px;
+}
+
+.search input{
+
+    width:340px;
+
+    padding:12px 15px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:var(--bg);
+}
+
+.icon{
+
+    width:45px;
+    height:45px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:var(--bg);
+
+    cursor:pointer;
+}
+
+.avatar{
+
+    width:45px;
+    height:45px;
+
+    border-radius:50%;
+
+    background:var(--primary);
+
+    color:white;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-weight:bold;
+}
+```css
+/* =======================
+LESSON HEADER
+======================= */
+
+.lesson-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+    margin-bottom:25px;
+    flex-wrap:wrap;
+}
+
+.lesson-header h2{
+    font-size:23px;
+    margin-bottom:8px;
+}
+
+.lesson-header p{
+    color:var(--muted);
+    font-size:14px;
+}
+
+.lesson-header select{
+    padding:12px 18px;
+    border:1px solid var(--line);
+    border-radius:10px;
+    background:white;
+    color:var(--text);
+    font-size:14px;
+    cursor:pointer;
+}
+
+/* =======================
+CONTENT AREA
+======================= */
+
+.main{
+    flex:1;
+    min-width:0;
+}
+
+.main > .topbar{
+    min-height:84px;
+}
+
+.main > .lesson-header,
+.main > .lesson-list{
+    margin-left:40px;
+    margin-right:40px;
+}
+
+.main > .lesson-header{
+    margin-top:35px;
+}
+
+/* =======================
+LESSON LIST
+======================= */
+
+.lesson-list{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+}
+
+/* =======================
+LESSON CARD
+======================= */
+
+.lesson-card{
+    display:flex;
+    align-items:center;
+    gap:22px;
+
+    background:var(--white);
+
+    border:1px solid var(--line);
+    border-radius:16px;
+
+    padding:24px;
+
+    box-shadow:0 3px 12px rgba(0,0,0,.04);
+
+    transition:.2s;
+}
+
+.lesson-card:hover{
+    transform:translateY(-2px);
+    box-shadow:0 6px 18px rgba(0,0,0,.08);
+}
+
+/* Lesson Number */
+
+.lesson-number{
+    width:60px;
+    height:60px;
+    flex-shrink:0;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:14px;
+
+    background:#eef0ff;
+    color:var(--primary);
+
+    font-size:23px;
+    font-weight:700;
+}
+
+/* Lesson Information */
+
+.lesson-info{
+    flex:1;
+    min-width:0;
+}
+
+.lesson-info h3{
+    font-size:16px;
+    line-height:1.6;
+    margin-bottom:7px;
+}
+
+.lesson-info p{
+    color:var(--muted);
+    font-size:13px;
+}
+
+/* Progress */
+
+.lesson-progress{
+    width:130px;
+    flex-shrink:0;
+}
+
+.lesson-progress progress{
+    width:100%;
+    height:9px;
+
+    border:none;
+    border-radius:10px;
+
+    overflow:hidden;
+}
+
+.lesson-progress progress::-webkit-progress-bar{
+    background:#e5e7eb;
+    border-radius:10px;
+}
+
+.lesson-progress progress::-webkit-progress-value{
+    background:var(--primary);
+    border-radius:10px;
+}
+
+.lesson-progress progress::-moz-progress-bar{
+    background:var(--primary);
+    border-radius:10px;
+}
+
+.lesson-progress span{
+    display:block;
+    text-align:right;
+    font-size:13px;
+    font-weight:700;
+    color:var(--primary);
+    margin-top:5px;
+}
+
+/* =======================
+STATUS BADGE
+======================= */
+
+.badge{
+    display:inline-block;
+    white-space:nowrap;
+
+    padding:7px 13px;
+
+    border-radius:8px;
+
+    background:#f3f4f6;
+    color:#6b7280;
+
+    font-size:12px;
+    font-weight:600;
+}
+
+.badge.success{
+    background:#dcfce7;
+    color:#15803d;
+}
+
+.badge.learning{
+    background:#fff3cd;
+    color:#b7791f;
+}
+
+/* =======================
+BUTTON
+======================= */
+
+.lesson-card button{
+    border:none;
+    border-radius:9px;
+
+    padding:11px 18px;
+
+    background:#eef0ff;
+    color:var(--primary);
+
+    font-size:13px;
+    font-weight:700;
+
+    white-space:nowrap;
+
+    cursor:pointer;
+    transition:.2s;
+}
+
+.lesson-card button:hover{
+    background:var(--primary);
+    color:white;
+}
+
+/* =======================
+RESPONSIVE
+======================= */
+
+@media(max-width:1100px){
+
+    .lesson-card{
+        flex-wrap:wrap;
+    }
+
+    .lesson-info{
+        flex-basis:70%;
+    }
+
+    .lesson-progress{
+        width:100%;
+    }
+}
+
+@media(max-width:800px){
+
+    .layout{
+        flex-direction:column;
+    }
+
+    .sidebar{
+        width:100%;
+        padding:14px;
+    }
+
+    .brand{
+        margin-bottom:15px;
+    }
+
+    .menu{
+        flex-direction:row;
+        overflow-x:auto;
+    }
+
+    .menu a{
+        white-space:nowrap;
+        font-size:13px;
+    }
+
+    .student-card{
+        display:none;
+    }
+
+    .topbar{
+        padding:16px;
+        flex-wrap:wrap;
+    }
+
+    .topbar h1{
+        font-size:17px;
+    }
+
+    .search{
+        display:none;
+    }
+
+    .main > .lesson-header,
+    .main > .lesson-list{
+        margin-left:16px;
+        margin-right:16px;
+    }
+
+    .main > .lesson-header{
+        margin-top:20px;
+    }
+
+    .lesson-card{
+        gap:12px;
+        padding:16px;
+    }
+
+    .lesson-info{
+        flex-basis:calc(100% - 75px);
+    }
+
+    .lesson-info h3{
+        font-size:14px;
+    }
+
+    .lesson-progress{
+        width:100%;
+    }
+
+    .lesson-card button{
+        flex:1;
+    }
+}
+```
